@@ -28,3 +28,26 @@ Designed to simulate a real online store with product catalog, cart, checkout, a
 1. Clone the repo:
    ```bash
    git clone https://github.com/kildarani08-spec/my-vite-app.git
+
+
+   ## 📸 Screenshots
+
+### Homepage
+![Homepage](assets/screenshots/homepage.png)
+
+### Product Page
+![Product Page](assets/screenshots/product.png)
+
+### PDP
+![PDP](assets/screenshots/pdp.png)
+
+### Cart & Checkout
+![Cart](assets/screenshots/cart.png)
+![Checkout](assets/screenshots/checkout.png)
+
+### Admin Dashboard
+![Admin Dashboard](assets/screenshots/admin-dashboard.png)
+
+
+### Admin Dynamic Offer
+![Admin Dynamic Offer](assets/screenshots/admin-offer.png)
