@@ -1,0 +1,383 @@
+.guest-track-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 2rem 1rem 3rem;
+}
+
+.guest-track-wrap {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem 3rem 3rem;
+  box-sizing: border-box;
+}
+
+.guest-track-header {
+  margin-bottom: 1.5rem;
+}
+
+.guest-track-header h1 {
+  margin: 0 0 0.75rem;
+  color: #141414;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.guest-track-description {
+  margin: 0;
+  max-width: 820px;
+  color: #5e6775;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.guest-track-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 760px;
+  margin-bottom: 1.5rem;
+}
+
+.guest-track-form label {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.guest-track-form span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #383838;
+}
+
+.guest-track-form input {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  box-sizing: border-box;
+  border: 1px solid #b8bcc4;
+  background: #fff;
+  font: inherit;
+  color: #161616;
+}
+
+.guest-track-form input:focus {
+  outline: none;
+  border-color: #4b5563;
+  box-shadow: 0 0 0 1px #4b5563;
+}
+
+.guest-track-form button {
+  width: fit-content;
+  min-width: 210px;
+  border: none;
+  background: #43434d;
+  color: #fff;
+  padding: 1rem 1.35rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.guest-track-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.guest-track-error {
+  margin: 0 0 1rem;
+  color: #c4301d;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.guest-track-result {
+  display: grid;
+  gap: 0;
+}
+
+.guest-track-progress {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0 0 2rem;
+}
+
+.guest-track-step {
+  position: relative;
+  display: grid;
+  gap: 0.55rem;
+  color: #c7c7cc;
+  padding-top: 1.4rem;
+}
+
+.guest-track-step::before {
+  content: "";
+  position: absolute;
+  top: 0.45rem;
+  left: 0;
+  right: -1rem;
+  height: 3px;
+  background: #d5d9df;
+}
+
+.guest-track-step:first-child::before {
+  left: 1rem;
+}
+
+.guest-track-step:last-child::before {
+  right: calc(100% - 1rem);
+}
+
+.guest-track-step-dot {
+  position: absolute;
+  top: 0;
+  left: 0.9rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  background: #d5d9df;
+}
+
+.guest-track-step.is-complete {
+  color: #0d6a55;
+}
+
+.guest-track-step.is-complete::before {
+  background: #cfd5dc;
+}
+
+.guest-track-step.is-complete .guest-track-step-dot {
+  background: #0d6a55;
+}
+
+.guest-track-step-label {
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.guest-track-step-date {
+  font-size: 0.92rem;
+  color: #6b7280;
+}
+
+.guest-track-items-list {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.75rem 0 2rem;
+}
+
+.guest-track-item-card {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.guest-track-item-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #eef1f5;
+}
+
+.guest-track-item-copy {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.guest-track-item-copy h3 {
+  margin: 0;
+  color: #2b3340;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.guest-track-item-copy p {
+  margin: 0;
+  color: #7b8594;
+  font-size: 0.98rem;
+}
+
+.guest-track-item-price {
+  display: grid;
+  gap: 0.3rem;
+  justify-items: end;
+  text-align: right;
+}
+
+.guest-track-item-price strong {
+  color: #1f2937;
+  font-size: 1.15rem;
+}
+
+.guest-track-item-price span {
+  color: #6b7280;
+}
+
+.guest-track-info-grid {
+  border-top: 1px solid #d9dbe1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 4rem;
+  padding-top: 2rem;
+}
+
+.guest-track-info-card {
+  display: grid;
+  gap: 0.7rem;
+  align-content: start;
+}
+
+.guest-track-info-card h3,
+.guest-track-updates h3 {
+  margin: 0;
+  color: #202533;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.guest-track-info-card p,
+.guest-track-info-card small {
+  margin: 0;
+  color: #5f6672;
+  line-height: 1.6;
+}
+
+.guest-track-delivery-lines {
+  display: grid;
+  gap: 0.25rem;
+  color: #5f6672;
+}
+
+.guest-track-help-links {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.guest-track-help-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #5f6672;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.guest-track-help-links a:hover {
+  color: #111827;
+}
+
+.guest-track-summary-card {
+  gap: 0.8rem;
+}
+
+.guest-track-summary-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  color: #5f6672;
+}
+
+.guest-track-summary-row strong {
+  color: #1f2937;
+}
+
+.guest-track-summary-row--total {
+  margin-top: 0.35rem;
+  padding-top: 1rem;
+  border-top: 1px dotted #d4d7dd;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.guest-track-updates {
+  border-top: 1px solid #d9dbe1;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+.guest-track-updates-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.guest-track-updates-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+  background: #fafafa;
+}
+
+@media (max-width: 900px) {
+  .guest-track-wrap {
+    padding: 1.5rem;
+  }
+
+  .guest-track-progress,
+  .guest-track-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guest-track-item-card {
+    grid-template-columns: 96px 1fr;
+  }
+
+  .guest-track-item-price {
+    grid-column: 2;
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .guest-track-page {
+    padding: 1rem 0 2rem;
+  }
+
+  .guest-track-wrap {
+    padding: 1rem;
+  }
+
+  .guest-track-progress,
+  .guest-track-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guest-track-form button {
+    width: 100%;
+  }
+
+  .guest-track-step::before {
+    right: 0;
+  }
+
+  .guest-track-item-card {
+    grid-template-columns: 1fr;
+  }
+
+  .guest-track-item-card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .guest-track-item-price,
+  .guest-track-updates-list li {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .guest-track-updates-list li {
+    display: grid;
+  }
+}

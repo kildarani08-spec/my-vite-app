@@ -1,0 +1,33 @@
+{
+    "operational_settings": {
+        "paymentGateway": {
+            "provider": "mock",
+            "sandboxMode": true,
+            "webhookEnabled": false,
+            "webhookSecret": ""
+        },
+        "notifications": {
+            "provider": "mail",
+            "smtpHost": "",
+            "smtpPort": 587,
+            "smtpUser": "",
+            "smtpPass": "",
+            "sendgridApiKey": "",
+            "mailgunDomain": "",
+            "mailgunApiKey": "",
+            "fromEmail": "support@myshop.com",
+            "enabled": false
+        },
+        "features": {
+            "allowGuestCheckout": true,
+            "maintenanceMode": false
+        },
+        "jobs": {
+            "workerEnabled": false,
+            "workerToken": "",
+            "outboxBatchSize": 25,
+            "maxEmailAttempts": 3,
+            "retryBackoffSeconds": 90
+        }
+    }
+}

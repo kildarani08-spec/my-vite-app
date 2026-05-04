@@ -1,0 +1,241 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  padding: 16px 0 0;
+}
+
+.product-grid-empty {
+  margin: 0;
+  border: 1px solid #e7d8c9;
+  border-radius: 16px;
+  background: #fffdf9;
+  color: #5f4633;
+  padding: 1rem;
+}
+
+.product-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: linear-gradient(180deg, #fffefb 0%, #fff9f2 100%);
+  border: 1px solid #ebdccf;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  border-color: #cda585;
+  box-shadow: var(--shadow-strong);
+}
+
+.product-card-media {
+  position: relative;
+  padding: 0.9rem;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  height: 210px;
+  object-fit: contain;
+  background: #ffffff;
+  border: 1px solid #efe2d5;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.product-chip {
+  position: absolute;
+  top: 1.3rem;
+  left: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.52rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.product-chip-offer {
+  color: #671f00;
+  border: 1px solid #efb494;
+  background: #ffe9db;
+}
+
+.product-chip-category {
+  top: auto;
+  bottom: 1.3rem;
+  left: 1.3rem;
+  color: #0a4f41;
+  border: 1px solid #9fd3c5;
+  background: #ebfdf7;
+}
+
+.product-chip-campaign {
+  left: auto;
+  right: 1.3rem;
+  max-width: calc(100% - 2.4rem);
+  color: #fff;
+  border: 1px solid rgba(25, 34, 48, 0.28);
+  background: #243041;
+}
+
+.product-campaign-note-threshold {
+  color: #14532d;
+}
+
+.product-card-body {
+  padding: 0 0.95rem 0.95rem;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 0.45rem;
+}
+
+.product-name {
+  font-size: 0.97rem;
+  margin: 0;
+  line-height: 1.35;
+  min-height: 2.6em;
+}
+
+.product-name .product-link {
+  color: #302014;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.product-name .product-link:hover {
+  color: #8f2f05;
+}
+
+.product-pricing {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  align-items: center;
+  gap: 0.3rem 0.5rem;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #8d8278;
+  font-size: 0.86rem;
+}
+
+.discount-price {
+  color: #8f2f05;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.offer-validity {
+  width: 100%;
+  color: #6a4a34;
+  font-size: 0.74rem;
+}
+
+.product-campaign-note {
+  width: 100%;
+  color: #0b6a46;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.product-tax-note {
+  width: 100%;
+  color: #66768a;
+  font-size: 0.73rem;
+}
+
+.product-description {
+  font-size: 0.8rem;
+  color: #5f554c;
+  margin: 0;
+  line-height: 1.45;
+  min-height: 2.8em;
+}
+
+.product-delivery-note {
+  margin: 0;
+  color: #0f6a46;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.product-rating {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #3d2c20;
+  font-weight: 600;
+}
+
+.product-rating span {
+  color: #d17700;
+}
+
+.product-rating-muted {
+  color: #7c6f63;
+}
+
+.product-card-footer {
+  margin-top: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.product-view-btn {
+  border: 1px solid #d8c4b2;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.32rem 0.58rem;
+  color: #4d311f;
+  font-weight: 700;
+  font-size: 0.76rem;
+  text-decoration: none;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.product-view-btn:hover {
+  border-color: #bb3e03;
+  background: #fff4ea;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #2b1d14;
+}
+
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-image {
+    height: 160px;
+    padding: 10px;
+  }
+
+  .product-card-body {
+    padding: 0 0.72rem 0.72rem;
+  }
+
+  .product-chip {
+    left: 1.1rem;
+    top: 1.1rem;
+  }
+
+  .product-chip-category {
+    top: auto;
+    bottom: 1.1rem;
+  }
+}

@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  --bg: #f7f5f2;
+  --bg-soft: #f0ece7;
+  --surface: #ffffff;
+  --surface-strong: #fffaf4;
+  --line: #e8ddd0;
+  --text: #1f1f1f;
+  --text-muted: #5c5b58;
+  --brand: #bb3e03;
+  --brand-strong: #9b2e00;
+  --brand-soft: #ffe3cc;
+  --shadow-soft: 0 10px 30px rgba(93, 64, 37, 0.08);
+  --shadow-strong: 0 18px 40px rgba(93, 64, 37, 0.14);
+
+  font-family: "Sora", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: #ffd5b0;
+  color: #2d1d14;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 2% 5%, rgba(255, 206, 162, 0.38), transparent 34%),
+    radial-gradient(circle at 96% 9%, rgba(255, 222, 192, 0.58), transparent 32%),
+    linear-gradient(180deg, #faf7f3 0%, #f6f1eb 100%);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main,
+  .products-container,
+  .product-grid,
+  .site-footer {
+    animation: fadeUp 420ms ease-out;
+  }
+}
