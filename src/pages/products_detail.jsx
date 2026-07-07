@@ -219,7 +219,7 @@ export default function ProductDetail() {
         setLoading(true);
         setError(null);
         const res = await fetch(
-          `/ecommerce/products_detail.php?id=${id}`
+          `https://my-vite-app-backend.onrender.com/products_detail.php?id=${id}`
         );
         if (!res.ok) throw new Error("Failed to fetch product details");
         const data = await res.json();
@@ -255,7 +255,7 @@ export default function ProductDetail() {
 
       try {
         setWishlistLoading(true);
-        const res = await fetch("/ecommerce/wishlist.php", {
+        const res = await fetch("https://my-vite-app-backend.onrender.com/wishlist.php", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`
@@ -304,7 +304,7 @@ export default function ProductDetail() {
         setReviewCheckLoading(true);
         setReviewCheckError(null);
 
-        const url = new URL("/ecommerce/review.php");
+        const url = new URL("https://my-vite-app-backend.onrender.com/review.php");
         url.searchParams.append("product_id", product?.id || product?.product_id);
 
         const res = await fetch(url.toString(), {
@@ -382,7 +382,7 @@ export default function ProductDetail() {
 
       const trimmedReviewText = reviewText.trim();
 
-      const res = await fetch("/ecommerce/review.php", {
+      const res = await fetch("https://my-vite-app-backend.onrender.com/review.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -431,7 +431,7 @@ export default function ProductDetail() {
 
     try {
       setWishlistActionLoading(true);
-      const res = await fetch("/ecommerce/wishlist.php", {
+      const res = await fetch("https://my-vite-app-backend.onrender.com/wishlist.php", {
         method: isWishlisted ? "DELETE" : "POST",
         headers: {
           "Content-Type": "application/json",
