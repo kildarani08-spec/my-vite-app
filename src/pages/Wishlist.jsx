@@ -34,7 +34,7 @@ function Wishlist() {
       return;
     }
 
-    fetch("/ecommerce/wishlist.php", {
+    fetch("https://my-vite-app-backend.onrender.com/wishlist.php", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((r) => r.json())
@@ -75,7 +75,7 @@ function Wishlist() {
   }
 
   function removeItem(productId) {
-    fetch("/ecommerce/wishlist.php", {
+    fetch("https://my-vite-app-backend.onrender.com/wishlist.php", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
