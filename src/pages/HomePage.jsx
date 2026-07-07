@@ -343,7 +343,7 @@ function HomePage() {
 
     Promise.all(
       productIds.map((productId) =>
-        fetch(`/ecommerce/products_detail.php?id=${productId}`, {
+        fetch(`https://my-vite-app-backend.onrender.com/products_detail.php?id=${productId}`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
           signal: controller.signal
@@ -381,7 +381,7 @@ function HomePage() {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch("/ecommerce/products.php?sort=relevance&limit=120", {
+    fetch("https://my-vite-app-backend.onrender.com/products.php?sort=relevance&limit=120", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
       signal: controller.signal
