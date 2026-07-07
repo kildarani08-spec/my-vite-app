@@ -153,7 +153,7 @@ function GuestOrderTrack() {
         order_number: orderNumber.trim(),
         email: email.trim(),
       });
-      const response = await fetch(`/ecommerce/guest_order_track.php?${query.toString()}`, {
+      const response = await fetch(`https://my-vite-app-backend.onrender.com/guest_order_track.php?${query.toString()}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
