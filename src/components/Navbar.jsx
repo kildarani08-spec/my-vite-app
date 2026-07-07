@@ -163,7 +163,7 @@ function Navbar() {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch("/ecommerce/products.php?sort=relevance&limit=300", {
+    fetch("https://my-vite-app-backend.onrender.com/products.php?sort=relevance&limit=300", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
       signal: controller.signal
