@@ -1,4 +1,4 @@
-export const API_BASE = "/ecommerce";
+export const API_BASE = "https://my-vite-app-backend.onrender.com";
 
 export function getAuthToken() {
   return localStorage.getItem("token") || sessionStorage.getItem("token") || "";
