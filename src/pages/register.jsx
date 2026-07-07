@@ -74,7 +74,7 @@ function Register() {
     }
 
     try {
-      const response = await fetch("/ecommerce/register.php", {
+      const response = await fetch("https://my-vite-app-backend.onrender.com/register.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
