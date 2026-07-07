@@ -50,7 +50,7 @@ export function CartProvider({ children }) {
       }
 
       const res = await fetch(
-        `/ecommerce/cart.php${token ? "" : `?guest_token=${guestToken}`}`,
+        `https://my-vite-app-backend.onrender.com/cart.php${token ? "" : `?guest_token=${guestToken}`}`,
         {
           method: "GET",
           headers: {
