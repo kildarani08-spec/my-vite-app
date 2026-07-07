@@ -38,7 +38,7 @@ function Orders() {
       return;
     }
 
-    fetch("/ecommerce/orders.php", {
+    fetch("https://my-vite-app-backend.onrender.com/orders.php", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((r) => r.json())
@@ -55,7 +55,7 @@ function Orders() {
   }
 
   function openOrder(order) {
-    fetch(`/ecommerce/orders.php?id=${order.id}`, {
+    fetch(`https://my-vite-app-backend.onrender.com/orders.php?id=${order.id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((r) => r.json())
