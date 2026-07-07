@@ -11,9 +11,9 @@ export function resolveImageUrl(value, fallback = DEFAULT_IMAGE_PLACEHOLDER) {
   }
 
   const normalized = raw.replace(/^\/+/, "");
-  if (normalized.startsWith("ecommerce/")) {
+  if (normalized.startsWith("https://my-vite-app-backend.onrender.com/")) {
     return `/${normalized}`;
   }
 
-  return `/ecommerce/${normalized}`;
+  return `https://my-vite-app-backend.onrender.com/${normalized}`;
 }
