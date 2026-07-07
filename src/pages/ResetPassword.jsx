@@ -47,7 +47,7 @@ function ResetPassword() {
 
     setLoading(true);
     try {
-      const res = await fetch("/ecommerce/reset_password.php", {
+      const res = await fetch("https://my-vite-app-backend.onrender.com/reset_password.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
