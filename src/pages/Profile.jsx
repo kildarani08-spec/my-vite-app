@@ -30,7 +30,7 @@ function Profile() {
       return;
     }
 
-    fetch("/ecommerce/profile.php", {
+    fetch("https://my-vite-app-backend.onrender.com/profile.php", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((r) => r.json())
