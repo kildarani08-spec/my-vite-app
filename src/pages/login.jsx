@@ -55,7 +55,7 @@ function Login() {
     try {
       const guestToken = localStorage.getItem("guest_token");
 
-      const res = await fetch("/ecommerce/login.php", {
+      const res = await fetch("https://my-vite-app-backend.onrender.com/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password, guest_token: guestToken })
