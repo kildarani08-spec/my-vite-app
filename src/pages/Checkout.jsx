@@ -636,7 +636,7 @@ function Checkout() {
     };
 
     try {
-      const response = await fetch("/ecommerce/user_addresses.php", {
+      const response = await fetch("https://my-vite-app-backend.onrender.com/user_addresses.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -912,15 +912,15 @@ function Checkout() {
     try {
       if (payment === "cod") {
         const codForm = buildCheckoutFormData();
-        const result = await submitFormData("/ecommerce/checkout.php", codForm);
+        const result = await submitFormData("https://my-vite-app-backend.onrender.com/checkout.php", codForm);
         finalizeSuccess(result);
         return;
       }
 
       const prepareForm = buildCheckoutFormData();
       const provider = "mock";
-      const prepareEndpoint = "/ecommerce/payment_mock_prepare.php";
-      const confirmEndpoint = "/ecommerce/payment_mock_confirm.php";
+      const prepareEndpoint = "https://my-vite-app-backend.onrender.com/payment_mock_prepare.php";
+      const confirmEndpoint = "https://my-vite-app-backend.onrender.com/payment_mock_confirm.php";
 
       const prepare = await submitFormData(prepareEndpoint, prepareForm);
 
