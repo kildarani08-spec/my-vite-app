@@ -26,7 +26,7 @@ function ForgotPassword() {
     setError("");
 
     try {
-      const res = await fetch("/ecommerce/forgot_password.php", {
+      const res = await fetch("https://my-vite-app-backend.onrender.com/forgot_password.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
