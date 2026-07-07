@@ -100,7 +100,7 @@ function AppContent() {
 
     const controller = new AbortController();
 
-    fetch("/ecommerce/products.php?limit=1", {
+    fetch("https://my-vite-app-backend.onrender.com/products.php?limit=1", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
       signal: controller.signal
