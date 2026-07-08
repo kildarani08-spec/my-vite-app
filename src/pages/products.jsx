@@ -424,7 +424,7 @@ function Products() {
     }
     params.set("limit", String(limitFromUrl));
 
-    fetch(`/ecommerce/products.php?${params.toString()}`, {
+    fetch(`https://my-vite-app-backend.onrender.com/products.php?${params.toString()}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
