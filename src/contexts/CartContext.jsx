@@ -167,7 +167,7 @@ export function CartProvider({ children }) {
     }
 
     try {
-      const res = await fetch("/ecommerce/cart.php", {
+      const res = await fetch("https://my-vite-app-backend.onrender.com/cart.php", {
         method: "POST",
         headers,
         body: JSON.stringify(body),
