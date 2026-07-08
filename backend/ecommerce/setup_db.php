@@ -11,7 +11,7 @@ try {
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     ]);
 
-    $sql = file_get_contents(__DIR__ . '/../database/schema.sql');
+   $sql = file_get_contents(__DIR__ . '/database/schema.sql');
     if ($sql === false) {
         throw new Exception('Could not read schema.sql');
     }
