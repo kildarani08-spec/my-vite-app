@@ -860,7 +860,7 @@ function AdminContent() {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch("/ecommerce/products.php?sort=relevance&limit=500", {
+   fetch("https://my-vite-app-backend.onrender.com/products.php?sort=relevance&limit=500", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
       signal: controller.signal
