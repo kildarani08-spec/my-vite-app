@@ -1,3 +1,4 @@
 FROM php:8.2-apache
-   COPY ./ecommerce /var/www/html/
-   EXPOSE 80
+RUN docker-php-ext-install pdo pdo_mysql mysqli
+COPY ./ecommerce /var/www/html/
+EXPOSE 80
