@@ -124,7 +124,7 @@ $effectiveExpr = "CASE
             WHEN v.discount_price IS NOT NULL
                  AND v.discount_price > 0
                  AND v.discount_price < v.{$variantPriceCol}
-                 AND (v.discount_end IS NULL OR v.discount_end = '0000-00-00 00:00:00' OR v.discount_end >= NOW())
+               AND (v.discount_end IS NULL OR v.discount_end >= NOW())
             THEN v.discount_price
             ELSE v.{$variantPriceCol}
         END";
