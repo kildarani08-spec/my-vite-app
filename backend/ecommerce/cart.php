@@ -85,14 +85,14 @@ function cart_payload(?int $userId, string $guestToken, ?array $user = null): ar
             ? "COALESCE(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(v.images, '$[0]')), ''), " . ($hasVariantImageColumn ? "NULLIF(v.image, ''), " : '') . "p.image)"
             : ($hasVariantImageColumn ? "COALESCE(NULLIF(v.image, ''), p.image)" : 'p.image'));
     $cartSnapshotExpr = $schema['has_price_column'] ? 'NULLIF(c.price, 0)' : 'NULL';
-    $activeVariantDiscountExpr = "CASE
-        WHEN v.discount_price IS NOT NULL
-             AND v.discount_price > 0
-             AND v.discount_price < v.{$variantPriceCol}
-             AND (v.discount_end IS NULL OR v.discount_end = '0000-00-00 00:00:00' OR v.discount_end >= NOW())
-        THEN v.discount_price
-        ELSE NULL
-    END";
+   $activeVariantDiscountExpr = "CASE
+    WHEN v.discount_price IS NOT NULL
+         AND v.discount_price > 0
+         AND v.discount_price < v.{$variantPriceCol}
+         AND (v.discount_end IS NULL OR v.discount_end = '0000-00-00 00:00:00' OR v.discount_end >= NOW())
+    THEN v.discount_price
+    ELSE NULL
+END";
     $snapshotExpr = "COALESCE({$cartSnapshotExpr}, v.{$variantPriceCol}, p.price, 0)";
     $catalogEffectiveExpr = "COALESCE({$activeVariantDiscountExpr}, {$cartSnapshotExpr}, v.{$variantPriceCol}, p.price, 0)";
 
