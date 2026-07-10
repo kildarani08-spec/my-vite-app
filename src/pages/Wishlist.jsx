@@ -171,7 +171,7 @@ function Wishlist() {
               <img
                 src={
                   item.image
-                    ? `/ecommerce/${item.image}`
+                    ? `https://my-vite-app-backend.onrender.com/${item.image}`
                     : "/placeholder.png"
                 }
                 alt={item.name}
