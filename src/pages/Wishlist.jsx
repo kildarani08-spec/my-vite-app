@@ -171,7 +171,6 @@ function Wishlist() {
             >
               <img
                 src={resolveImageUrl(item.image)}
-                }
                 alt={item.name}
                 onClick={() => navigate(`/product/${item.product_id}`)}
                 style={{
