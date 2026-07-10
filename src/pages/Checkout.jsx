@@ -528,7 +528,7 @@ function Checkout() {
   // Fetch saved addresses
   useEffect(() => {
     if (!authToken) return;
-    fetch("/ecommerce/user_addresses.php", {
+    fetch("https://my-vite-app-backend.onrender.com/user_addresses.php", {
       headers: { Authorization: `Bearer ${authToken}` },
     })
       .then(async (res) => {
