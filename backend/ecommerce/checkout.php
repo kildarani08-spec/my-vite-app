@@ -340,14 +340,14 @@ try {
         $cartTable = checkout_cart_table_name();
         $variantTable = checkout_variant_table_name();
         $variantPriceColumn = checkout_variant_price_column();
-        $activeVariantDiscountExpr = 'CASE
-                                WHEN v.discount_price IS NOT NULL
-                                     AND v.discount_price > 0
-                                     AND v.discount_price < v.' . $variantPriceColumn . '
-                                     AND (v.discount_end IS NULL OR v.discount_end = "0000-00-00 00:00:00" OR v.discount_end >= NOW())
-                                THEN v.discount_price
-                                ELSE NULL
-                             END';
+       $activeVariantDiscountExpr = 'CASE
+                        WHEN v.discount_price IS NOT NULL
+                             AND v.discount_price > 0
+                             AND v.discount_price < v.' . $variantPriceColumn . '
+                             AND (v.discount_end IS NULL OR v.discount_end >= NOW())
+                        THEN v.discount_price
+                        ELSE NULL
+                     END';
 
         if ($cartTable === 'carts') {
             $itemsSql = 'SELECT c.product_id, c.variant_id, c.quantity,
