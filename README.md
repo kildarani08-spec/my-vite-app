@@ -2,7 +2,7 @@
 
 ## 🔗 Live Demo
 - **Live Site:** https://my-vite-app-ltkt.onrender.com
-- **Admin Panel:** https://my-vite-app-ltkt.onrender.com/admin/login
+- **Admin Panel:** https://my-vite-app-ltkt.onrender.com/login
   - Email: `demo@myshop.com`
   - Password: `Demo@1234`
 
