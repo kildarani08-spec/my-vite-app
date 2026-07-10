@@ -28,22 +28,23 @@ $variantPriceCol = $variantTable === 'product_variants' ? 'base_price' : 'price'
 $variantStatusCond = $variantTable === 'product_variants' ? "v.status = 'active'" : "v.availability != 'out_of_stock'";
 
 if ($method === 'GET') {
-    $sql = 'SELECT w.id AS wishlist_id, p.id AS product_id, p.name, p.image,
-                   v.id AS variant_id, v.sku AS variant_sku, v.' . $variantPriceCol . ' AS base_price,
-                   CASE
-                       WHEN v.discount_price IS NOT NULL
-                            AND v.discount_price > 0
-                            AND v.discount_price < v.' . $variantPriceCol . '
-                           AND (v.discount_end IS NULL OR v.discount_end >= NOW())
-                           THEN v.discount_price
-                       ELSE NULL
-                   END AS discount_price,
-                   CASE WHEN v.stock_quantity > 0 THEN "in_stock" ELSE "out_of_stock" END AS availability
-            FROM ' . $wishlistTable . ' w
-            JOIN products p ON p.id = w.product_id
-            LEFT JOIN ' . $variantTable . ' v ON v.product_id = p.id AND ' . $variantStatusCond . '
-            WHERE w.user_id = ?
-            ORDER BY w.created_at DESC';
+   $sql = 'SELECT w.id AS wishlist_id, p.id AS product_id, p.name, ANY_VALUE(p.image) AS image,
+               ANY_VALUE(v.id) AS variant_id, ANY_VALUE(v.sku) AS variant_sku, ANY_VALUE(v.' . $variantPriceCol . ') AS base_price,
+               ANY_VALUE(CASE
+                   WHEN v.discount_price IS NOT NULL
+                        AND v.discount_price > 0
+                        AND v.discount_price < v.' . $variantPriceCol . '
+                        AND (v.discount_end IS NULL OR v.discount_end >= NOW())
+                   THEN v.discount_price
+                   ELSE NULL
+               END) AS discount_price,
+               ANY_VALUE(CASE WHEN v.stock_quantity > 0 THEN "in_stock" ELSE "out_of_stock" END) AS availability
+        FROM ' . $wishlistTable . ' w
+        JOIN products p ON p.id = w.product_id
+        LEFT JOIN ' . $variantTable . ' v ON v.product_id = p.id AND ' . $variantStatusCond . '
+        WHERE w.user_id = ?
+        GROUP BY w.id
+        ORDER BY w.created_at DESC';
     $stmt = db()->prepare($sql);
     $stmt->execute([$userId]);
     ok(['wishlist' => $stmt->fetchAll()]);
