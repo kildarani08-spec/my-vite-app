@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../contexts/useCart";
 import { fetchPublicSiteContent, getDefaultSiteContent } from "../utils/siteContent";
 import { getStoredUser } from "../utils/adminApi";
+import { resolveImageUrl } from "../utils/imageUrl";
 
 function Wishlist() {
   const [items, setItems] = useState([]);
@@ -169,10 +170,7 @@ function Wishlist() {
               }}
             >
               <img
-                src={
-                  item.image
-                    ? `https://my-vite-app-backend.onrender.com/${item.image}`
-                    : "/placeholder.png"
+                src={resolveImageUrl(item.image)}
                 }
                 alt={item.name}
                 onClick={() => navigate(`/product/${item.product_id}`)}
