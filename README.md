@@ -1,5 +1,11 @@
 # My Vite App – Ecommerce Project
 
+## 🔗 Live Demo
+- **Live Site:** https://my-vite-app-ltkt.onrender.com
+- **Admin Panel:** https://my-vite-app-ltkt.onrender.com/admin/login
+  - Email: `demo@myshop.com`
+  - Password: `Demo@1234`
+
 ## 📖 Description
 Full‑stack ecommerce site built with **React (Vite)** frontend and **PHP backend**.  
 Designed to simulate a real online store with product catalog, cart, checkout, and admin features.
@@ -7,30 +13,35 @@ Designed to simulate a real online store with product catalog, cart, checkout, a
 ---
 
 ## 🛠 Tech Stack
-- React.js + Vite
-- PHP backend
-- Node.js
-- JavaScript (ES6+)
-- Git & GitHub
+- React.js + Vite (Frontend)
+- PHP (Backend REST API)
+- MySQL (Database)
+- Docker (Backend containerization)
+- Render (Hosting - Frontend & Backend)
+- Railway (MySQL Database hosting)
 
 ---
 
 ## ✨ Features
-- Product listing with images and details
-- Shopping cart functionality
-- Checkout flow
-- Admin dashboard for product management
+- Product catalog with categories, variants, and search
+- Shopping cart & wishlist
+- Guest and registered user checkout
+- Mock payment gateway integration (Razorpay-style flow)
+- Order tracking and order history
+- Admin dashboard: manage products, orders, users, reviews, promotions
+- Order status workflow (pending → confirmed → shipped → delivered)
+- Returns & refunds management
 - Responsive design
-
 ---
 
 ## 🚀 Setup Instructions
 1. Clone the repo:
-   ```bash
+```bash
    git clone https://github.com/kildarani08-spec/my-vite-app.git
+```
 
+## 📸 Screenshots
 
-   ## 📸 Screenshots
 
 ### Homepage
 ![Homepage](assets/screenshots/homepage.png)
