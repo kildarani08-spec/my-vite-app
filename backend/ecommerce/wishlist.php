@@ -43,7 +43,6 @@ if ($method === 'GET') {
             JOIN products p ON p.id = w.product_id
             LEFT JOIN ' . $variantTable . ' v ON v.product_id = p.id AND ' . $variantStatusCond . '
             WHERE w.user_id = ?
-            GROUP BY w.id
             ORDER BY w.created_at DESC';
     $stmt = db()->prepare($sql);
     $stmt->execute([$userId]);
