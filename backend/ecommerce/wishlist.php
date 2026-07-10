@@ -34,8 +34,8 @@ if ($method === 'GET') {
                        WHEN v.discount_price IS NOT NULL
                             AND v.discount_price > 0
                             AND v.discount_price < v.' . $variantPriceCol . '
-                            AND (v.discount_end IS NULL OR v.discount_end = "0000-00-00 00:00:00" OR v.discount_end >= NOW())
-                       THEN v.discount_price
+                           AND (v.discount_end IS NULL OR v.discount_end >= NOW())
+                           THEN v.discount_price
                        ELSE NULL
                    END AS discount_price,
                    CASE WHEN v.stock_quantity > 0 THEN "in_stock" ELSE "out_of_stock" END AS availability
