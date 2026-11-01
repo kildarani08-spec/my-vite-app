@@ -20,7 +20,8 @@ function db(): PDO
     if (DB_HOST !== 'localhost') {
         $options[PDO::MYSQL_ATTR_SSL_CA] = '/etc/ssl/certs/ca-certificates.crt';
     }
-    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+       $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+    $pdo->exec("SET SESSION sql_mode = REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', '')");
 
     return $pdo;
 }
