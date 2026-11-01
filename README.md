@@ -5,6 +5,8 @@
 - **Admin Panel:** https://my-vite-app-ltkt.onrender.com/login
   - Email: `demo@myshop.com`
   - Password: `Demo@1234`
+  
+> **Note:** Hosted on free tiers. The first load may take up to 1 minute while the server wakes up.
 
 ## 📖 Description
 Full‑stack ecommerce site built with **React (Vite)** frontend and **PHP backend**.  
@@ -18,7 +20,7 @@ Designed to simulate a real online store with product catalog, cart, checkout, a
 - MySQL (Database)
 - Docker (Backend containerization)
 - Render (Hosting - Frontend & Backend)
-- Railway (MySQL Database hosting)
+- TiDB Cloud (MySQL-compatible database hosting)
 
 ---
 
